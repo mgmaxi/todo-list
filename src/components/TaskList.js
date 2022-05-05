@@ -1,22 +1,50 @@
 import React from 'react';
+import {
+  List,
+  ListItem,
+  ListIcon,
+  Divider,
+  IconButton,
+  Checkbox,
+} from '@chakra-ui/react';
+import { DeleteIcon } from '@chakra-ui/icons';
+import { FiChevronRight } from 'react-icons/fi';
 
 const TaskList = ({ tasks, onTaskDelete, onToggleTaskDone }) => {
   return (
     <>
-      <h2>Tasks to do: {tasks.filter((task) => task.done === false).length}</h2>
-      <ul>
+      <div className="container">
+        <h2 className="section">
+          Tasks to do: {tasks.filter((task) => task.done === false).length}
+        </h2>
+      </div>
+      <Divider />
+
+      <List spacing={3}>
         {tasks.map((task) =>
           task.done === false ? (
-            <div key={task.id}>
-              <li>{task.name}</li>
-              <input type="checkbox" onChange={() => onToggleTaskDone(task)} />
-              <button onClick={() => onTaskDelete(task)}>Delete</button>
-            </div>
+            <ListItem key={task.id} className="task">
+              <ListIcon as={FiChevronRight} />
+              <p>{task.name}</p>
+              <Checkbox
+                type="checkbox"
+                checked={task.done}
+                onChange={() => onToggleTaskDone(task)}
+                size="lg"
+                className="checkbox"
+              ></Checkbox>
+              <IconButton
+                onClick={() => onTaskDelete(task)}
+                className="delete-btn"
+                aria-label="Search database"
+                icon={<DeleteIcon />}
+              />
+            </ListItem>
           ) : (
             ''
           )
         )}
-      </ul>
+      </List>
     </>
   );
 };
