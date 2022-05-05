@@ -31,6 +31,12 @@ function App() {
     setTasks(tasks.filter((t) => t.id !== task.id));
   }
 
+  function toggleTaskDone(task) {
+    setTasks(
+      tasks.map((t) => (t.id === task.id ? { ...t, done: !t.done } : t))
+    );
+  }
+
   return (
     <div className="App">
       <header></header>
@@ -40,6 +46,7 @@ function App() {
           tasks={tasks}
           onTaskAdd={taskAdd}
           onTaskDelete={taskDelete}
+          onToggleTaskDone={toggleTaskDone}
         ></TaskList>
         <TaskDone></TaskDone>
       </main>
