@@ -20,13 +20,15 @@
 /* Main */
 
 .App-main {
-  background-color: #ffffff;
-  min-height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
+  padding: 0 0 110px 0;
+  width: 100vw;
+  min-height: calc(100vh - 70px);
   color: rgb(0, 0, 0);
+  background-color: #ffffff;
 }
 .container {
   display: flex;
@@ -38,13 +40,18 @@
   justify-content: center;
   align-items: center;
   height: 50px;
-  width: 500px;
+  width: 100%;
   font-size: 28px;
   font-weight: bold;
 }
 .App-main > h2 {
   font-size: 32px;
   font-weight: bold;
+}
+
+.text {
+  margin: 20px;
+  font-size: 26px;
 }
 
 .task {
@@ -142,8 +149,12 @@
 
 @media only screen and (max-width: 375px) {
   .task {
-    width: 350px;
-    background-color: aqua;
+    width: 300px;
+    background-color: rgb(255, 0, 0);
+  }
+
+  .task > p {
+    overflow: hidden;
   }
 }
 
