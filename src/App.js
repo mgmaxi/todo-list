@@ -5,23 +5,13 @@ import TaskDone from './components/TaskDone';
 import TaskList from './components/TaskList';
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      name: 'Task',
-      done: false,
-    },
-    {
-      id: 2,
-      name: 'Task',
-      done: false,
-    },
-    {
-      id: 3,
-      name: 'Task',
-      done: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState(
+    JSON.parse(window.localStorage.getItem('tasks')) || []
+  );
+
+  useEffect(() => {
+    window.localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   function taskAdd(task) {
     setTasks([...tasks, { id: Date.now(), name: task, done: false }]);
