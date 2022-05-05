@@ -27,12 +27,20 @@ function App() {
     setTasks([...tasks, { id: Date.now(), name: task, done: false }]);
   }
 
+  function taskDelete(task) {
+    setTasks(tasks.filter((t) => t.id !== task.id));
+  }
+
   return (
     <div className="App">
       <header></header>
       <main className="App-main">
         <TaskAdd onTaskAdd={taskAdd}></TaskAdd>
-        <TaskList tasks={tasks} onTaskAdd={taskAdd}></TaskList>
+        <TaskList
+          tasks={tasks}
+          onTaskAdd={taskAdd}
+          onTaskDelete={taskDelete}
+        ></TaskList>
         <TaskDone></TaskDone>
       </main>
       <footer></footer>
