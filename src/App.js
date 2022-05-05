@@ -38,7 +38,12 @@ function App() {
           onTaskDelete={taskDelete}
           onToggleTaskDone={toggleTaskDone}
         ></TaskList>
-        <TaskDone></TaskDone>
+        <TaskDone
+          tasks={tasks}
+          onTaskAdd={taskAdd}
+          onTaskDelete={taskDelete}
+          onToggleTaskDone={toggleTaskDone}
+        ></TaskDone>
       </main>
       <footer></footer>
     </div>
