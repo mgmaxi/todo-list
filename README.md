@@ -1,7 +1,7 @@
 # <b> ToDo List</b>
 
 <p align="center">
-<img src="https://github.com/mgmaxi/todo-list/blob/src/assets/todolist.png" width="275" height="275" >
+<img src="https://github.com/mgmaxi/todo-list/blob/main/src/assets/todolist.png" width="275" height="275" >
 </p>
 
 ## 📄 <b> About the Application </b>
@@ -12,4 +12,5 @@ Used Chakra UI for styles.
 
 ## 🚀 <b> Deploy</b>
 
-- [ToDo List Deploy](https://mgmaxi.github.io/todo-list)
+- [ToDo List](https://mgmaxi.github.io/todo-list)
+
